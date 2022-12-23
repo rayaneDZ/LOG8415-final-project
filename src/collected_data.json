@@ -1,0 +1,32 @@
+{
+    "stand-alone_node": {
+        "InstanceId": "i-006a457cf81d7ae8c",
+        "PrivateIpAddress": "172.31.11.94",
+        "PublicIpAddress": "3.93.11.38"
+    },
+    "proxy": {
+        "InstanceId": "i-0251e4cb133dc4627",
+        "PrivateIpAddress": "172.31.3.93",
+        "PublicIpAddress": "52.205.72.100"
+    },
+    "mgmt_node": {
+        "InstanceId": "i-004f2d3e17a7db4ea",
+        "PrivateIpAddress": "172.31.4.170",
+        "PublicIpAddress": "35.174.17.129"
+    },
+    "data_node_1": {
+        "InstanceId": "i-0f5176647928fba01",
+        "PrivateIpAddress": "172.31.8.24",
+        "PublicIpAddress": "50.19.42.227"
+    },
+    "data_node_2": {
+        "InstanceId": "i-05ce8cb59b704d4cb",
+        "PrivateIpAddress": "172.31.3.6",
+        "PublicIpAddress": "3.90.147.186"
+    },
+    "data_node_3": {
+        "InstanceId": "i-021e6f327757a37fd",
+        "PrivateIpAddress": "172.31.9.179",
+        "PublicIpAddress": "54.88.166.143"
+    }
+}
