@@ -5,3 +5,6 @@ src/*.log
 src/*.cnf
 *.pem
 src/*.txt
+DigitalOcean.sh
+*.txt
+*.png
