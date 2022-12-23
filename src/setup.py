@@ -1,4 +1,3 @@
-from concurrent.futures import wait
 import boto3
 import time
 import json

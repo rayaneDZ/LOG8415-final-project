@@ -22,8 +22,6 @@ mkdir install
 
 tar -xvf mysql-cluster_7.6.6-1ubuntu18.04_amd64.deb-bundle.tar -C install/
 
-cd install
-
 sudo apt update
 
 EOF

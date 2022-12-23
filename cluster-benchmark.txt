@@ -1,5 +1,5 @@
 WARNING: --num-threads is deprecated, use --threads instead
-WARNING: --max-time is deprecated, use --time instead      
+WARNING: --max-time is deprecated, use --time instead
 sysbench 1.0.11 (using system LuaJIT 2.1.0-beta3)
 
 Running the test with following options:
@@ -13,26 +13,26 @@ Threads started!
 
 SQL statistics:
     queries performed:
-        read:                            352142
-        write:                           100599
-        other:                           50302
-        total:                           503043
-    transactions:                        25149  (419.03 per sec.)
-    queries:                             503043 (8381.70 per sec.)
-    ignored errors:                      4      (0.07 per sec.)
+        read:                            154322
+        write:                           44092
+        other:                           22046
+        total:                           220460
+    transactions:                        11023  (183.64 per sec.)
+    queries:                             220460 (3672.81 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
     reconnects:                          0      (0.00 per sec.)
 
 General statistics:
-    total time:                          60.0148s
-    total number of events:              25149
+    total time:                          60.0228s
+    total number of events:              11023
 
 Latency (ms):
-         min:                                  2.98
-         avg:                                 14.31
-         max:                                 81.03
-         95th percentile:                     19.65
-         sum:                             359950.81
+         min:                                 19.62
+         avg:                                 32.66
+         max:                                889.86
+         95th percentile:                     41.85
+         sum:                             360033.19
 
 Threads fairness:
-    events (avg/stddev):           4191.5000/3.69
-    execution time (avg/stddev):   59.9918/0.01
+    events (avg/stddev):           1837.1667/3.98
+    execution time (avg/stddev):   60.0055/0.00

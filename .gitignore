@@ -3,3 +3,4 @@ src/*.json
 src/*.ini
 src/*.log
 src/*.cnf
+*.pem

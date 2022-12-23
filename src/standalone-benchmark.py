@@ -38,10 +38,10 @@ sudo mysql --defaults-file=/etc/mysql/debian.cnf < /home/ubuntu/sakila-db/sakila
 sudo apt-get install sysbench -y
 
 #preparing the benchmark
-sudo sysbench oltp_read_write --table-size=1000000 --mysql-db=sakila --mysql-user=root --mysql-password= --db-driver=mysql prepare
+sudo sysbench oltp_read_write --table-size=100000 --mysql-db=sakila --mysql-user=root --mysql-password= --db-driver=mysql prepare
 
 #running the benchmark
-sudo sysbench oltp_read_write --table-size=1000000 --num-threads=6 --max-time=60 --mysql-db=sakila --db-driver=mysql --mysql-user=root --mysql-password= run > stand-alone-benchmark.txt
+sudo sysbench oltp_read_write --table-size=100000 --num-threads=6 --max-time=60 --mysql-db=sakila --db-driver=mysql --mysql-user=root --mysql-password= run > stand-alone-benchmark.txt
 
 #cleanup
 sudo sysbench oltp_read_write --mysql-db=sakila --mysql-user=root --mysql-password= --db-driver=mysql cleanup
