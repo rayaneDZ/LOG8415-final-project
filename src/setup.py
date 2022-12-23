@@ -86,15 +86,18 @@ def create_ec2_instances(nbr, type, sg_id, subnet_id):
 
 
 def wait_until_running():
+    """
+    This function waits for the newly created instances.
+    It gets the instances by filtering by the security goupe name.
+    It returns a dictionary containing the id, private ip, public ip of each instance
+    """
+    # waiting 1 minute to make sure the instances are running.
     time.sleep(60)
+
     data = {}
     count = 0
     instances = ec2_resource.instances.filter(
         Filters=[{'Name': 'instance.group-name', 'Values': ['MySQL Security Group']}])
-
-    for instance in instances:
-        print("##################")
-        print(instance)
 
     for instance in instances:
         count += 1
@@ -115,7 +118,6 @@ def wait_until_running():
                                                  "PrivateIpAddress": instance.private_ip_address,
                                                  "PublicIpAddress": instance.public_ip_address}
     return data
-
 
  # Start
 print("\n############### SETTING UP THE ARCHITECTURE ###############\n")

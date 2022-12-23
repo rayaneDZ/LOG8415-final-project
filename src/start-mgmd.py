@@ -79,6 +79,11 @@ EOF
 
 
 def ssh_connect_with_retry(ssh, public_ip_address, retries):
+    """
+    ssh: paramiko SSHClient instance
+    public_ip_address: ip of the instance we wish to connect to
+    retries: number of tries before failing to connect
+    """
     if retries > 3:
         return False
     privkey = paramiko.RSAKey.from_private_key_file(
@@ -98,7 +103,10 @@ def ssh_connect_with_retry(ssh, public_ip_address, retries):
 
 
 def start_mgmd(public_ip_address):
-
+    """
+    this function connects to the management node and installs and launches the ndb_mgmd process
+    it also uploads two configuration files created at the top of this script, namely config.ini and my.cnf
+    """
     # Setting Up SSH
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())

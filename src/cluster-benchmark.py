@@ -44,6 +44,11 @@ EOF
 
 
 def ssh_connect_with_retry(ssh, public_ip_address, retries):
+    """
+    ssh: paramiko SSHClient instance
+    public_ip_address: ip of the instance we wish to connect to
+    retries: number of tries before failing to connect
+    """
     if retries > 3:
         return False
     privkey = paramiko.RSAKey.from_private_key_file(
@@ -63,7 +68,12 @@ def ssh_connect_with_retry(ssh, public_ip_address, retries):
 
 
 def cluster_benchmark(public_ip_address):
-
+    """
+    this function connects to the management node,
+    installs sakila-db
+    installs sysbench
+    runs the benchmarking using sysbench then retrieves the results file and puts it in the src/ directory
+    """
     # Setting Up SSH
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())

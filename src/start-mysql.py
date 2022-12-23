@@ -24,11 +24,26 @@ tar -xvf mysql-cluster_7.6.6-1ubuntu18.04_amd64.deb-bundle.tar -C install/
 
 sudo apt update
 
+sudo apt install -y libaio1 libmecab2
+
+cd /home/ubuntu/install
+
+sudo dpkg -i mysql-common_7.6.6-1ubuntu18.04_amd64.deb
+
+sudo dpkg -i mysql-cluster-community-client_7.6.6-1ubuntu18.04_amd64.deb
+
+sudo dpkg -i mysql-client_7.6.6-1ubuntu18.04_amd64.deb
+
 EOF
 """
 
 
 def ssh_connect_with_retry(ssh, public_ip_address, retries):
+    """
+    ssh: paramiko SSHClient instance
+    public_ip_address: ip of the instance we wish to connect to
+    retries: number of tries before failing to connect
+    """
     if retries > 3:
         return False
     privkey = paramiko.RSAKey.from_private_key_file(
@@ -48,7 +63,10 @@ def ssh_connect_with_retry(ssh, public_ip_address, retries):
 
 
 def start_mysql(public_ip_address):
-
+    """
+    this functions connects to the management node and install MySQL Server and Client
+    only half of the steps are done by this function because the next command needs a user input (see launch.py)
+    """
     # Setting Up SSH
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())

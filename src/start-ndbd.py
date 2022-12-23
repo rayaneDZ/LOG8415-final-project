@@ -51,6 +51,11 @@ EOF
 
 
 def ssh_connect_with_retry(ssh, public_ip_address, retries):
+    """
+    ssh: paramiko SSHClient instance
+    public_ip_address: ip of the instance we wish to connect to
+    retries: number of tries before failing to connect
+    """
     if retries > 3:
         return False
     privkey = paramiko.RSAKey.from_private_key_file(
@@ -70,7 +75,10 @@ def ssh_connect_with_retry(ssh, public_ip_address, retries):
 
 
 def start_ndbd(public_ip_address):
-
+    """
+    this function connects to the data node and installs the necessary packages to run ndbd process.
+    it also configures the /etc/my.cnf file
+    """
     # Setting Up SSH
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
