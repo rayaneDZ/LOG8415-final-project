@@ -7,7 +7,7 @@ INSTANCE_TYPE = "t2.micro"
 KEY_PAIR_NAME = "vockey"
 AMI_ID = "ami-061dbd1209944525c"
 # AT LEAST 4 (1 stand-alone, 1 proxy, 1 managment node, 3 data nodes)
-NBR_OF_INSTANCES = 6
+NBR_OF_INSTANCES = 5
 
 ec2_client = boto3.client("ec2", region_name=AWS_REGION)
 ec2_resource = boto3.resource('ec2', region_name=AWS_REGION)
@@ -106,10 +106,6 @@ def wait_until_running():
                                         "PrivateIpAddress": instance.private_ip_address,
                                         "PublicIpAddress": instance.public_ip_address}
         elif count == 2:
-            data["proxy"] = {"InstanceId": instance.id,
-                             "PrivateIpAddress": instance.private_ip_address,
-                             "PublicIpAddress": instance.public_ip_address}
-        elif count == 3:
             data["mgmt_node"] = {"InstanceId": instance.id,
                                  "PrivateIpAddress": instance.private_ip_address,
                                  "PublicIpAddress": instance.public_ip_address}
