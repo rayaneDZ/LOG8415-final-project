@@ -1,1 +1,5 @@
 src/*.pem
+src/*.json
+src/*.ini
+src/*.log
+src/*.cnf

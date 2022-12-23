@@ -26,21 +26,6 @@ cd install
 
 sudo apt update
 
-sudo apt install -y libaio1 libmecab2
-
-sudo dpkg -i mysql-common_7.6.6-1ubuntu18.04_amd64.deb
-sudo dpkg -i mysql-cluster-community-client_7.6.6-1ubuntu18.04_amd64.deb
-sudo dpkg -i mysql-client_7.6.6-1ubuntu18.04_amd64.deb
-sudo dpkg -i mysql-cluster-community-server_7.6.6-1ubuntu18.04_amd64.deb
-
-sudo dpkg -i mysql-server_7.6.6-1ubuntu18.04_amd64.deb
-
-sudo cat ./my.cnf >> /etc/mysql/my.cnf
-
-sudo systemctl restart mysql
-
-sudo systemctl enable mysql
-
 EOF
 """
 

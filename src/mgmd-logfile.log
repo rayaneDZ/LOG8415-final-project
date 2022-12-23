@@ -1,2 +1,0 @@
-mgmd env setup done 
- stdout: b'Selecting previously unselected package mysql-cluster-community-management-server.\n(Reading database ... 58127 files and directories currently installed.)\nPreparing to unpack mysql-cluster-community-management-server_7.6.6-1ubuntu18.04_amd64.deb ...\nUnpacking mysql-cluster-community-management-server (7.6.6-1ubuntu18.04) ...\nSetting up mysql-cluster-community-management-server (7.6.6-1ubuntu18.04) ...\nProcessing triggers for man-db (2.8.3-2ubuntu0.1) ...\nRules updated\nRules updated\nRules updated\nRules updated\n'
