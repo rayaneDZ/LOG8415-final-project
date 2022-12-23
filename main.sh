@@ -3,11 +3,9 @@ read -p "Do you use the commands python3/pip3 instead of python/pip? (y/n): " y
 if [ $y == "y" ]
 then
     # echo "Installing the following dependencies: boto3 - requests - paramiko"
-    # pip3 install boto3==1.24.89
-    # pip3 install botocore==1.27.89
-    # pip3 install paramiko==2.11.0
-    # pip3 install requests==2.22.0
-    # pip3 install matplotlib==3.0.3
+    pip3 install boto3==1.24.89
+    pip3 install paramiko==2.11.0
+    pip3 install scp==0.14.4
 
     echo "Clonning the git repo to proceed with the deployment"
     git clone https://github.com/rayaneDZ/LOG8415-final-project.git
@@ -18,13 +16,12 @@ then
     read -p "Was the previous step completed?(y)" confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
     cd LOG8415-final-project/src
-    #python3 launch.py
+    python3 launch3.py
 else
     # echo "Installing the following dependencies: boto3 - requests - paramiko"
-    # pip install boto3==1.24.89
-    # pip install botocore==1.27.89
-    # pip install paramiko==2.11.0
-    # pip install requests==2.22.0
+    pip install boto3==1.24.89
+    pip install paramiko==2.11.0
+    pip install scp==0.14.4
 
     echo "Clonning the git repo to proceed with the deployment"
     git clone https://github.com/rayaneDZ/LOG8415-final-project.git
@@ -35,5 +32,5 @@ else
     read -p "Was the previous step completed?(y)" confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
     cd /LOG8415-final-project/src
-    #python launch.py
+    python launch.py
 fi

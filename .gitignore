@@ -6,5 +6,6 @@ src/*.cnf
 *.pem
 src/*.txt
 DigitalOcean.sh
-*.txt
+cluster-benchmark.txt
+stand-alone-benchmark.txt
 *.png
