@@ -31,6 +31,6 @@ else
     echo "2-Please enter the .pem file of your key pair named 'vockey' in the LOG8415-final-project/src folder"
     read -p "Was the previous step completed?(y)" confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
-    cd /LOG8415-final-project/src
+    cd LOG8415-final-project/src
     python launch.py
 fi
