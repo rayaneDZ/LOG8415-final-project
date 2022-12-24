@@ -126,7 +126,7 @@ print("Creating the security group...")
 sg_id = create_sg(vpcID)
 print("Security group created!\n")
 
-print("Creating 6 EC2 instances...")
+print("Creating 5 EC2 instances...")
 instances = create_ec2_instances(
     NBR_OF_INSTANCES, INSTANCE_TYPE, sg_id, subnet_id)
 print("EC2 instances created!\n")
