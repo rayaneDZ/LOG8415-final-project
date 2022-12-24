@@ -110,7 +110,7 @@ def wait_until_running():
                                  "PrivateIpAddress": instance.private_ip_address,
                                  "PublicIpAddress": instance.public_ip_address}
         else:
-            data["data_node_"+str(count - 3)] = {"InstanceId": instance.id,
+            data["data_node_"+str(count - 2)] = {"InstanceId": instance.id,
                                                  "PrivateIpAddress": instance.private_ip_address,
                                                  "PublicIpAddress": instance.public_ip_address}
     return data
