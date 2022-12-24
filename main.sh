@@ -15,8 +15,8 @@ then
     echo "2-Please enter the .pem file of your key pair named 'vockey' in the LOG8415-final-project/src folder"
     read -p "Was the previous step completed?(y)" confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
-    cd LOG8415-final-project/src
-    python3 launch3.py
+    echo "go ahead and cd into LOG8415-final-project/src, then run the script launch3.py"
+
 else
     # echo "Installing the following dependencies: boto3 - requests - paramiko"
     pip install boto3==1.24.89
@@ -31,6 +31,5 @@ else
     echo "2-Please enter the .pem file of your key pair named 'vockey' in the LOG8415-final-project/src folder"
     read -p "Was the previous step completed?(y)" confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 
-    cd LOG8415-final-project/src
-    python launch.py
+    echo "go ahead and cd into LOG8415-final-project/src, then run the script launch.py"
 fi
