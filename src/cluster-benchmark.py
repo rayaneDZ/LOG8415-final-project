@@ -17,22 +17,22 @@ def cluster_commands():
     return """
 #!/bin/bash
 
-# #downloading sakila database SQL files
-# wget https://downloads.mysql.com/docs/sakila-db.tar.gz
-# tar -xzvf sakila-db.tar.gz
-# rm sakila-db.tar.gz
+#downloading sakila database SQL files
+wget https://downloads.mysql.com/docs/sakila-db.tar.gz
+tar -xzvf sakila-db.tar.gz
+rm sakila-db.tar.gz
 
-# #modify sakila-schema.sql to not use InnoDB
-# sed -i 's/ENGINE=InnoDB//g' /home/ubuntu/sakila-db/sakila-schema.sql
+#modify sakila-schema.sql to not use InnoDB
+sed -i 's/ENGINE=InnoDB//g' /home/ubuntu/sakila-db/sakila-schema.sql
 
-# #create the schema and the tables
-# sudo mysql < /home/ubuntu/sakila-db/sakila-schema.sql
+#create the schema and the tables
+sudo mysql < /home/ubuntu/sakila-db/sakila-schema.sql
 
-# #populate the database
-# sudo mysql < /home/ubuntu/sakila-db/sakila-data.sql
+#populate the database
+sudo mysql < /home/ubuntu/sakila-db/sakila-data.sql
 
-# #installing sysbench
-# sudo apt-get install sysbench -y
+#installing sysbench
+sudo apt-get install sysbench -y
 
 sudo sysbench oltp_read_write --table-size=100000 --mysql-db=sakila --mysql-user=root --mysql-password= --db-driver=mysql --mysql-storage-engine=ndbcluster prepare
 sudo sysbench oltp_read_write --table-size=100000 --num-threads=6 --max-time=60 --mysql-db=sakila --mysql-user=root --mysql-password= --db-driver=mysql --mysql-storage-engine=ndbcluster run > cluster-benchmark.txt
